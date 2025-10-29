@@ -941,13 +941,15 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
    (function(){
-      emailjs.init("ipddUcfuhSm67v2JJ"); // Replace with your EmailJS public key
+      emailjs.init("ipddUcfuhSm67v2JJ"); // Your EmailJS public key
    })();
 
-   document.getElementById('contactForm').addEventListener('submit', function(e) {
+   const contactForm = document.getElementById('contactForm');
+
+   contactForm.addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent page reload
 
-        const form = {
+        const formData = {
             name: document.getElementById('name').value,
             phone: document.getElementById('phone').value,
             email: document.getElementById('email').value,
@@ -955,13 +957,13 @@
             message: document.getElementById('message').value
         };
 
-        emailjs.send('service_q6ga807', 'template_js61yig', form)
+        emailjs.send('service_q6ga807', 'template_js61yig', formData)
             .then(function(response) {
-                alert('Your message has been sent successfully!');
-                document.getElementById('contactForm').reset(); // Clear form
+                alert('✅ Your message has been sent successfully!');
+                contactForm.reset(); // Clear the form fields
             }, function(error) {
-                alert('Oops! Something went wrong. Please try again.');
-                console.error(error);
+                alert('❌ Oops! Something went wrong. Please try again.');
+                console.error('EmailJS Error:', error);
             });
    });
-</script>                       
+</script>
