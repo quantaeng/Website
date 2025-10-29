@@ -1,160 +1,924 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quanta Engineering Solutions</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanta Engineering Solutions - Your Reliable Electrical Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-blue: #003366;
+            --light-blue: #4A90E2;
+            --sky-blue: #87CEEB;
+            --pale-blue: #E6F3FF;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: var(--dark-blue);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sky-blue);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--pale-blue);
+            margin-top: 0.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            color: var(--sky-blue);
+            border-bottom-color: var(--sky-blue);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--dark-blue) 100%);
+            color: white;
+            padding: 120px 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideInRight 1s;
+        }
+
+        .hero .unit {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s;
+        }
+
+        .section-alt {
+            background: var(--pale-blue);
+        }
+
+        .section-dark {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .section-light {
+            background: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-dark .section-title {
+            color: var(--sky-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--light-blue), var(--sky-blue));
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 1.5rem;
+        }
+
+        .section-dark .section-subtitle {
+            color: var(--pale-blue);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--light-blue);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: var(--light-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .stat-card:hover {
+            background: var(--dark-blue);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .services-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .service-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--light-blue);
+        }
+
+        .service-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
+            border-top-color: var(--dark-blue);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-box h3 {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-box li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .service-box li::before {
+            content: '?';
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-size: 1.2rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+        }
+
+        .expertise-box {
+            background: var(--light-blue);
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .expertise-box:hover {
+            background: var(--sky-blue);
+            transform: scale(1.1);
+        }
+
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-box p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .testing-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .testing-card {
+            background: var(--pale-blue);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 6px solid var(--dark-blue);
+        }
+
+        .testing-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .testing-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 4rem;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .contact-info-section {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            color: white;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--sky-blue);
+        }
+
+        .contact-detail {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--sky-blue);
+        }
+
+        .contact-detail-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form-section {
+            padding: 3rem;
+        }
+
+        .contact-form-section h3 {
+            color: var(--dark-blue);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--pale-blue);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+        }
+
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--sky-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1200px) {
+            .services-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .expertise-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-layout,
+            .testing-section,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .services-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <div class="logo">Quanta Engineering Solutions</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-section">
+                <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
+                <div class="tagline">Your Reliable Electrical Partner</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="home" class="hero-section">
-    <div class="hero-content">
-      <h1>Powering Industries with Reliable Testing Solutions</h1>
-      <p>Specializing in electrical testing and commissioning for power plants and substations across India.</p>
-      <a href="#contact" class="hero-btn">Get in Touch</a>
-    </div>
-  </section>
-
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Quanta Engineering Solutions provides advanced electrical testing and commissioning services
-        for power infrastructure, ensuring safety, reliability, and compliance across India.
-      </p>
-    </div>
-  </section>
-
-  <section id="services" class="services-section">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-list">
-        <div class="service-card">
-          <h3>Transformer Testing</h3>
-          <p>Comprehensive diagnostic testing for power and distribution transformers.</p>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>QUANTA ENGINEERING SOLUTIONS</h1>
+            <p class="subtitle">Excellence in Electrical Testing & Commissioning</p>
+            <p class="unit">A Unit of Minion Enterprises</p>
         </div>
-        <div class="service-card">
-          <h3>Relay Calibration</h3>
-          <p>Precision relay testing and calibration for reliable protection systems.</p>
-        </div>
-        <div class="service-card">
-          <h3>Panel Testing</h3>
-          <p>Control, protection, and metering panel testing with certified equipment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="contact-content">
-        <div class="contact-info">
-          <h2>Contact Us</h2>
-          <p>We’d love to hear from you. Please fill out the form below and we’ll get in touch soon.</p>
-          <p><strong>📞 Phone:</strong> +91 99800 22300</p>
-          <p><strong>📧 Email:</strong> service@quantaengineeringsolutions.com</p>
-        </div>
+    <section id="about" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Leading the way in electrical testing and commissioning services</p>
+            </div>
+            
+            <div class="about-layout">
+                <div class="about-card">
+                    <h3>Our Expertise</h3>
+                    <p>Quanta Engineering Solutions has extensive experience in the testing of electrical systems and equipment in electrical utility facilities, including all types of substations up to 765 kV (e.g., transmission & distribution).</p>
+                    <p>Our group of highly qualified engineers have years of experience and expertise in testing and start-up, and in general, commissioning of electrical systems along with knowledge of sustainable testing processes and procedures.</p>
+                </div>
 
-        <div class="contact-form-section">
-          <!-- ✅ Correct single form -->
-          <form id="contactForm" method="POST" action="send_mail.php">
-            <h3>Send Us a Message</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-              </div>
+                <div class="about-card">
+                    <h3>Our Capabilities</h3>
+                    <p>Our engineers are trained in Operation and Maintenance (O&M) during testing and start-up activities. Our seasoned engineering staff for design, along with a highly recognized group of field test engineers and technicians.</p>
+                    <p>We are competent to perform a whole unit of commissioning activities to protective relay setting tests across various power generation facilities including GIS, AIS, Thermal, Wind, Hydro, and Solar Power Plants.</p>
+                </div>
             </div>
 
-            <div class="form-group full-width">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">765kV</div>
+                    <div class="stat-label">Max Voltage Capacity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Service Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Quality Assurance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive electrical testing and commissioning solutions</p>
             </div>
 
-            <div class="form-group full-width">
-              <label for="service">Service Required</label>
-              <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
+            <div class="services-layout">
+                <div class="service-box">
+                    <div class="service-icon">?</div>
+                    <h3>Power Transformer Testing</h3>
+                    <ul>
+                        <li>Voltage Ratio</li>
+                        <li>Vector Group</li>
+                        <li>Magnetic Balance</li>
+                        <li>Magnetizing Current</li>
+                        <li>Turn Ratio Testing</li>
+                        <li>Winding Resistance</li>
+                        <li>Insulation Resistance</li>
+                        <li>SFRA & Tandelta</li>
+                        <li>Oil Filtration Service</li>
+                        <li>OLTC Commissioning</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">??</div>
+                    <h3>CT/PT & CVT Testing</h3>
+                    <ul>
+                        <li>Insulation Resistance</li>
+                        <li>Winding Resistance</li>
+                        <li>Polarity Testing</li>
+                        <li>Knee Point Testing</li>
+                        <li>Ratio Testing</li>
+                        <li>Tandelta Testing</li>
+                        <li>Burden Testing</li>
+                        <li>Accuracy Verification</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">??</div>
+                    <h3>Circuit Breaker Testing</h3>
+                    <ul>
+                        <li>Insulation Resistance</li>
+                        <li>Timing Tests (SF6)</li>
+                        <li>CRM & DCRM Testing</li>
+                        <li>Coil Current Testing</li>
+                        <li>Coil IR Testing</li>
+                        <li>Motor Resistance & IR</li>
+                        <li>Local/Remote Operation</li>
+                        <li>Contact Resistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">??</div>
+                    <h3>Panel Testing</h3>
+                    <ul>
+                        <li>HT/LT Panel Testing</li>
+                        <li>VCB Testing</li>
+                        <li>ACB Testing</li>
+                        <li>CT & PT Commissioning</li>
+                        <li>Relay Testing (All types)</li>
+                        <li>Scheme Checking</li>
+                        <li>Feeder Commissioning</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">??</div>
+                    <h3>Cable Services</h3>
+                    <ul>
+                        <li>Cable Hi-Pot Test</li>
+                        <li>HT Cable Termination</li>
+                        <li>Cable Fault Location</li>
+                        <li>Cable Laying & Routing</li>
+                        <li>Cabling & Glanding</li>
+                        <li>Insulation Testing</li>
+                        <li>Continuity Checks</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">??</div>
+                    <h3>Additional Services</h3>
+                    <ul>
+                        <li>HT/LT Motor Testing</li>
+                        <li>Meter Calibration</li>
+                        <li>O&M Services</li>
+                        <li>Overhauling Work</li>
+                        <li>Equipment Erection</li>
+                        <li>T&C Work</li>
+                        <li>Substation Automation</li>
+                        <li>Relay Integration to SAS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Expertise</h2>
+                <p class="section-subtitle">Specialized in multiple power plant types and systems</p>
             </div>
 
-            <div class="form-group full-width">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            <div class="expertise-grid">
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>GIS</h3>
+                    <p>Gas Insulated Switchgear</p>
+                </div>
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>AIS</h3>
+                    <p>Air Insulated Switchgear</p>
+                </div>
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>Thermal</h3>
+                    <p>Thermal Power Plants</p>
+                </div>
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>Wind</h3>
+                    <p>Wind Power Plants</p>
+                </div>
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>Hydro</h3>
+                    <p>Hydro Power Plants</p>
+                </div>
+                <div class="expertise-box">
+                    <div class="expertise-icon">??</div>
+                    <h3>Solar</h3>
+                    <p>Solar Power Plants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testing" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testing Equipment & Specializations</h2>
+                <p class="section-subtitle">State-of-the-art equipment for precise testing</p>
             </div>
 
-            <div class="form-group full-width">
-              <button type="submit" class="submit-btn">Send Message</button>
+            <div class="testing-section">
+                <div class="testing-card">
+                    <h3>Installation & Erection</h3>
+                    <p>We provide comprehensive installation and erection services including panel erection, switchyard erection, cabling, glanding, termination, transformer erection work, civil foundation work, and monopole erection works.</p>
+                </div>
+
+                <div class="testing-card">
+                    <h3>Design Services</h3>
+                    <p>Our team specializes in the design of substation automation systems and integration of protective relays to existing Substation Automation Systems (SAS), ensuring seamless operation and enhanced reliability.</p>
+                </div>
+
+                <div class="testing-card">
+                    <h3>Advanced Testing</h3>
+                    <p>We perform SFRA (Sweep Frequency Response Analysis), Tan Delta testing, DCRM testing, and various other specialized tests using state-of-the-art equipment to ensure optimal performance and safety.</p>
+                </div>
+
+                <div class="testing-card">
+                    <h3>Operation & Maintenance</h3>
+                    <p>Electrical maintenance ensures equipment is kept in good working order. We provide regular inspections, testing, and repair services, along with overhauling work for all types of electrical equipment.</p>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-top">
-        <div class="footer-section">
-          <h4>About Us</h4>
-          <p>Quanta Engineering Solutions specializes in electrical testing and commissioning for power plants and substations across India, providing reliable and safe electrical services.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#home" style="color: white;">Home</a></li>
-            <li><a href="#about" style="color: white;">About</a></li>
-            <li><a href="#services" style="color: white;">Services</a></li>
-            <li><a href="#contact" style="color: white;">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <p>📞 +91 99800 22300<br>📧 service@quantaengineeringsolutions.com</p>
-        </div>
-      </div>
+    <section id="contact" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your electrical testing and commissioning needs</p>
+            </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2025 Quanta Engineering Solutions. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">??</div>
+                        <div class="contact-detail-content">
+                            <h4>Phone</h4>
+                            <p>+91 99800 22300<br>+91 90191 98006</p>
+                        </div>
+                    </div>
 
-  <!-- ✅ Move scripts here for proper execution -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("gNzrFsp0aNuc1vvxK"); // Replace with your EmailJS public key
-    })();
+                    <div class="contact-detail">
+                        <div class="contact-icon">??</div>
+                        <div class="contact-detail-content">
+                            <h4>Email</h4>
+                            <p>service@quantaengineeringsolutions.com</p>
+                        </div>
+                    </div>
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+                    <div class="contact-detail">
+                        <div class="contact-icon">??</div>
+                        <div class="contact-detail-content">
+                            <h4>Address</h4>
+                            <p>Unit No.1 H.No. 517<br>
+                            JP Nagar 4th Phase<br>
+                            17th Cross Road<br>
+                            Bangalore - 560078</p>
+                        </div>
+                    </div>
+                </div>
 
-      emailjs.sendForm("service_q6ga807", "template_js61yig", this)
-        .then(function() {
-          alert("✅ Message sent successfully!");
-        }, function(error) {
-          alert("❌ Failed to send message. Please try again.");
-          console.error("EmailJS Error:", error);
-        });
-    });
-  </script>
-</body>
-</html>
+                <div class="contact-form-section">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="service">Service Required</label>
+                            <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
+                        </div>
+                        
+                        <div class="form-group full-width
