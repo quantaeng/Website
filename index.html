@@ -942,7 +942,7 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
    (function(){
-      emailjs.init("YOUR_USER_PUBLIC_KEY"); // Replace with your EmailJS public key
+      emailjs.init("ipddUcfuhSm67v2JJ"); // Replace with your EmailJS public key
    })();
 
    document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -956,7 +956,7 @@
             message: document.getElementById('message').value
         };
 
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+        emailjs.send('service_q6ga807', 'template_js61yig', form)
             .then(function(response) {
                 alert('Your message has been sent successfully!');
                 document.getElementById('contactForm').reset(); // Clear form
