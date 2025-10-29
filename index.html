@@ -616,6 +616,25 @@
         }
     </style>
 </head>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("gNzrFsp0aNuc1vvxK"); // Replace with your EmailJS public key
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+      .then(function() {
+        alert("✅ Message sent successfully!");
+      }, function(error) {
+        alert("❌ Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
+
 <body>
     <header class="header">
         <nav class="nav-container">
