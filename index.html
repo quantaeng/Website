@@ -861,68 +861,111 @@
         </div>
     </section>
 
-    <section id="contact" class="section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's discuss your electrical testing and commissioning needs</p>
-            </div>
+<section id="contact" class="section-light">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss your electrical testing and commissioning needs</p>
+        </div>
 
-            <div class="contact-wrapper">
-                <div class="contact-info-section">
-                    <h3>Contact Information</h3>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">??</div>
-                        <div class="contact-detail-content">
-                            <h4>Phone</h4>
-                            <p>+91 99800 22300<br>+91 90191 98006</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <div class="contact-icon">??</div>
-                        <div class="contact-detail-content">
-                            <h4>Email</h4>
-                            <p>service@quantaengineeringsolutions.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-detail">
-                        <div class="contact-icon">??</div>
-                        <div class="contact-detail-content">
-                            <h4>Address</h4>
-                            <p>Unit No.1 H.No. 517<br>
-                            JP Nagar 4th Phase<br>
-                            17th Cross Road<br>
-                            Bangalore - 560078</p>
-                        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info-section">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-detail">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-detail-content">
+                        <h4>Phone</h4>
+                        <p>+91 99800 22300<br>+91 90191 98006</p>
                     </div>
                 </div>
 
-                <div class="contact-form-section">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-detail-content">
+                        <h4>Email</h4>
+                        <p>service@quantaengineeringsolutions.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-detail-content">
+                        <h4>Address</h4>
+                        <p>Unit No.1 H.No. 517<br>
+                        JP Nagar 4th Phase<br>
+                        17th Cross Road<br>
+                        Bangalore - 560078</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="service">Service Required</label>
-                            <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
-                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="service">Service Required</label>
+                        <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message here"></textarea>
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("YOUR_USER_PUBLIC_KEY"); // Replace with your EmailJS public key
+   })();
+
+   document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent page reload
+
+        const form = {
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            service: document.getElementById('service').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+            .then(function(response) {
+                alert('Your message has been sent successfully!');
+                document.getElementById('contactForm').reset(); // Clear form
+            }, function(error) {
+                alert('Oops! Something went wrong. Please try again.');
+                console.error(error);
+            });
+   });
+</script>
                         
 <div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
     <button type="submit" class="submit-btn-centered">Send Message</button>
