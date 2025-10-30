@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quanta Engineering Solutions - Your Reliable Electrical Partner</title>
-
-    <!-- ✅ Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         :root {
             --dark-blue: #003366;
@@ -42,11 +42,29 @@
             flex-wrap: wrap;
         }
 
-        .logo-section { display: flex; flex-direction: column; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--sky-blue); }
-        .tagline { font-size: 0.9rem; color: var(--pale-blue); margin-top: 0.2rem; }
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+        }
 
-        .nav-menu { display: flex; list-style: none; gap: 2.5rem; }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sky-blue);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--pale-blue);
+            margin-top: 0.2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
         .nav-menu a {
             color: white;
             text-decoration: none;
@@ -55,6 +73,7 @@
             padding: 0.5rem 0;
             border-bottom: 2px solid transparent;
         }
+
         .nav-menu a:hover {
             color: var(--sky-blue);
             border-bottom-color: var(--sky-blue);
@@ -65,20 +84,165 @@
             color: white;
             padding: 120px 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero .subtitle { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .hero .unit { font-size: 1.1rem; opacity: 0.9; }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
 
-        .section-alt { background: var(--pale-blue); }
-        .section-dark { background: var(--dark-blue); color: white; }
-        .section-light { background: white; }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-        .container { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-title { font-size: 2.8rem; color: var(--dark-blue); }
-        .section-dark .section-title { color: var(--sky-blue); }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideInRight 1s;
+        }
+
+        .hero .unit {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s;
+        }
+
+        .section-alt {
+            background: var(--pale-blue);
+        }
+
+        .section-dark {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .section-light {
+            background: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-dark .section-title {
+            color: var(--sky-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--light-blue), var(--sky-blue));
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 1.5rem;
+        }
+
+        .section-dark .section-subtitle {
+            color: var(--pale-blue);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--light-blue);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: var(--light-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .stat-card:hover {
+            background: var(--dark-blue);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
 
         .services-layout {
             display: grid;
@@ -94,12 +258,51 @@
             transition: all 0.3s;
             border-top: 4px solid var(--light-blue);
         }
-        .service-box:hover { transform: translateY(-10px); }
+
+        .service-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
+            border-top-color: var(--dark-blue);
+        }
 
         .service-icon {
-            font-size: 2.5rem;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-box h3 {
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-box li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .service-box li::before {
+            content: '?';
+            position: absolute;
+            left: 0;
             color: var(--light-blue);
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .expertise-grid {
@@ -110,20 +313,57 @@
 
         .expertise-box {
             background: var(--light-blue);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s;
             cursor: pointer;
-            color: white;
         }
+
         .expertise-box:hover {
             background: var(--sky-blue);
             transform: scale(1.1);
         }
+
         .expertise-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-box h3 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
+        }
+
+        .expertise-box p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .testing-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .testing-card {
+            background: var(--pale-blue);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 6px solid var(--dark-blue);
+        }
+
+        .testing-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .testing-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
 
         .contact-wrapper {
@@ -132,6 +372,7 @@
             gap: 4rem;
             background: white;
             border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
 
@@ -139,16 +380,25 @@
             background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
             color: white;
             padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--sky-blue);
         }
 
         .contact-detail {
+            margin-bottom: 2rem;
             display: flex;
             align-items: start;
             gap: 1rem;
-            margin-bottom: 1.5rem;
         }
+
         .contact-icon {
-            font-size: 1.5rem;
             width: 40px;
             height: 40px;
             background: rgba(255,255,255,0.2);
@@ -156,170 +406,218 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
-        .contact-form-section { padding: 3rem; }
+        .contact-detail-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--sky-blue);
+        }
+
+        .contact-detail-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form-section {
+            padding: 3rem;
+        }
+
+        .contact-form-section h3 {
+            color: var(--dark-blue);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
 
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group.full-width { grid-column: 1 / -1; }
-        .form-group input, .form-group textarea {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 1rem;
             border: 2px solid var(--pale-blue);
             border-radius: 8px;
             font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
         }
 
-        .submit-btn-centered {
-            background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+.submit-btn-centered {
+    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: auto;           /* width based on content */
+    display: inline-block; /* allows centering */
+    box-shadow: 0 5px 15px rgba(74,144,226,0.3);
+}
+
+.submit-btn-centered:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(74,144,226,0.6);
+}
+        }
+
+        .footer {
+            background: var(--dark-blue);
             color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(74,144,226,0.3);
+            padding: 3rem 2rem;
         }
 
-        .submit-btn-centered:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(74,144,226,0.6);
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--sky-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1200px) {
+            .services-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .expertise-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-layout,
+            .testing-section,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .services-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-</head>
-
-<body>
-
-<header class="header">
-    <nav class="nav-container">
-        <div class="logo-section">
-            <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
-            <div class="tagline">Your Reliable Electrical Partner</div>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>QUANTA ENGINEERING SOLUTIONS</h1>
-        <p class="subtitle">Excellence in Electrical Testing & Commissioning</p>
-        <p class="unit">A Unit of Minion Enterprises</p>
-    </div>
-</section>
-
-<section id="services" class="section-light">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Services</h2>
-        </div>
-        <div class="services-layout">
-            <div class="service-box">
-                <div class="service-icon"><i class="fas fa-bolt"></i></div>
-                <h3>Power Transformer Testing</h3>
-            </div>
-            <div class="service-box">
-                <div class="service-icon"><i class="fas fa-plug"></i></div>
-                <h3>CT/PT & CVT Testing</h3>
-            </div>
-            <div class="service-box">
-                <div class="service-icon"><i class="fas fa-switch"></i></div>
-                <h3>Circuit Breaker Testing</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="expertise" class="section-dark">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Expertise</h2>
-        </div>
-        <div class="expertise-grid">
-            <div class="expertise-box">
-                <div class="expertise-icon"><i class="fas fa-industry"></i></div>
-                <h3>GIS</h3>
-            </div>
-            <div class="expertise-box">
-                <div class="expertise-icon"><i class="fas fa-tower-broadcast"></i></div>
-                <h3>AIS</h3>
-            </div>
-            <div class="expertise-box">
-                <div class="expertise-icon"><i class="fas fa-solar-panel"></i></div>
-                <h3>Solar</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section-light">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Get In Touch</h2>
-        </div>
-
-        <div class="contact-wrapper">
-            <div class="contact-info-section">
-                <h3>Contact Information</h3>
-                <div class="contact-detail">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div><h4>Phone</h4><p>+91 99800 22300<br>+91 90191 98006</p></div>
-                </div>
-                <div class="contact-detail">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div><h4>Email</h4><p>service@quantaengineeringsolutions.com</p></div>
-                </div>
-                <div class="contact-detail">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div><h4>Address</h4><p>Unit No.1 H.No. 517<br>JP Nagar 4th Phase, Bangalore</p></div>
-                </div>
-            </div>
-
-            <div class="contact-form-section">
-                <h3>Send Us a Message</h3>
-                <form id="contactForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="service">Service Required</label>
-                        <input type="text" id="service" placeholder="e.g., Transformer Testing">
-                    </div>
-
-                    <div style="text-align:center;">
-                        <button type="submit" class="submit-btn-centered">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
 </head>
 <body>
     <header class="header">
