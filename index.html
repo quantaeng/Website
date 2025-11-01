@@ -927,33 +927,29 @@
 <div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
     <button type="submit" class="submit-btn-centered">Send Message</button>
 </div>
-<!-- EmailJS SDK -->
+
+<!-- ✅ EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
    (function(){
-      emailjs.init("ipddUcfuhSm67v2JJ"); // Your EmailJS public key
+      emailjs.init("ipddUcfuhSm67v2JJ");
    })();
 
-   const contactForm = document.getElementById('contactForm');
+   document.getElementById('contactForm').addEventListener('submit', function(e) {
+       e.preventDefault();
 
-   contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent page reload
+       const formData = {
+           name: document.getElementById('name').value,
+           phone: document.getElementById('phone').value,
+           email: document.getElementById('email').value,
+           service: document.getElementById('service').value
+       };
 
-        const formData = {
-            name: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            service: document.getElementById('service').value,
-            message: document.getElementById('message').value
-        };
-
-        emailjs.send('service_q6ga807', 'template_js61yig', formData)
-            .then(function(response) {
-                alert('✅ Your message has been sent successfully!');
-                contactForm.reset(); // Clear the form fields
-            }, function(error) {
-                alert('❌ Oops! Something went wrong. Please try again.');
-                console.error('EmailJS Error:', error);
-            });
+       emailjs.send('service_q6ga807', 'template_js61yig', formData)
+           .then(() => alert('✅ Message sent successfully!'),
+                 err => alert('❌ Failed to send message.'));
    });
 </script>
+
+</body>
+</html>
