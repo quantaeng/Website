@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quanta Engineering Solutions - Your Reliable Electrical Partner</title>
-    <head>
-<style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -299,7 +298,7 @@
         }
 
         .service-box li::before {
-            content: '?';
+            content: '⚡';
             position: absolute;
             left: 0;
             color: var(--light-blue);
@@ -477,25 +476,22 @@
             min-height: 120px;
         }
 
-.submit-btn-centered {
-    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
-    color: white;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    width: auto;           /* width based on content */
-    display: inline-block; /* allows centering */
-    box-shadow: 0 5px 15px rgba(74,144,226,0.3);
-}
+        .submit-btn {
+            background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
 
-.submit-btn-centered:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(74,144,226,0.6);
-}
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
         }
 
         .footer {
@@ -624,7 +620,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo-section">
-                <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
+                <div class="logo">QUANTA ENGINEERING</div>
                 <div class="tagline">Your Reliable Electrical Partner</div>
             </div>
             <ul class="nav-menu">
@@ -643,6 +639,149 @@
             <h1>QUANTA ENGINEERING SOLUTIONS</h1>
             <p class="subtitle">Excellence in Electrical Testing & Commissioning</p>
             <p class="unit">A Unit of Minion Enterprises</p>
+        </div>
+    </section>
+
+    <section id="about" class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Leading the way in electrical testing and commissioning services</p>
+            </div>
+            
+            <div class="about-layout">
+                <div class="about-card">
+                    <h3>Our Expertise</h3>
+                    <p>Quanta Engineering Solutions has extensive experience in the testing of electrical systems and equipment in electrical utility facilities, including all types of substations up to 765 kV (e.g., transmission & distribution).</p>
+                    <p>Our group of highly qualified engineers have years of experience and expertise in testing and start-up, and in general, commissioning of electrical systems along with knowledge of sustainable testing processes and procedures.</p>
+                </div>
+
+                <div class="about-card">
+                    <h3>Our Capabilities</h3>
+                    <p>Our engineers are trained in Operation and Maintenance (O&M) during testing and start-up activities. Our seasoned engineering staff for design, along with a highly recognized group of field test engineers and technicians.</p>
+                    <p>We are competent to perform a whole unit of commissioning activities to protective relay setting tests across various power generation facilities including GIS, AIS, Thermal, Wind, Hydro, and Solar Power Plants.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">765kV</div>
+                    <div class="stat-label">Max Voltage Capacity</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Service Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Quality Assurance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive electrical testing and commissioning solutions</p>
+            </div>
+
+            <div class="services-layout">
+                <div class="service-box">
+                    <div class="service-icon">⚡</div>
+                    <h3>Power Transformer Testing</h3>
+                    <ul>
+                        <li>Voltage Ratio</li>
+                        <li>Vector Group</li>
+                        <li>Magnetic Balance</li>
+                        <li>Magnetizing Current</li>
+                        <li>Turn Ratio Testing</li>
+                        <li>Winding Resistance</li>
+                        <li>Insulation Resistance</li>
+                        <li>SFRA & Tandelta</li>
+                        <li>Oil Filtration Service</li>
+                        <li>OLTC Commissioning</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🔌</div>
+                    <h3>CT/PT & CVT Testing</h3>
+                    <ul>
+                        <li>Insulation Resistance</li>
+                        <li>Winding Resistance</li>
+                        <li>Polarity Testing</li>
+                        <li>Knee Point Testing</li>
+                        <li>Ratio Testing</li>
+                        <li>Tandelta Testing</li>
+                        <li>Burden Testing</li>
+                        <li>Accuracy Verification</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🔧</div>
+                    <h3>Circuit Breaker Testing</h3>
+                    <ul>
+                        <li>Insulation Resistance</li>
+                        <li>Timing Tests (SF6)</li>
+                        <li>CRM & DCRM Testing</li>
+                        <li>Coil Current Testing</li>
+                        <li>Coil IR Testing</li>
+                        <li>Motor Resistance & IR</li>
+                        <li>Local/Remote Operation</li>
+                        <li>Contact Resistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">📊</div>
+                    <h3>Panel Testing</h3>
+                    <ul>
+                        <li>HT/LT Panel Testing</li>
+                        <li>VCB Testing</li>
+                        <li>ACB Testing</li>
+                        <li>CT & PT Commissioning</li>
+                        <li>Relay Testing (All types)</li>
+                        <li>Scheme Checking</li>
+                        <li>Feeder Commissioning</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">🔩</div>
+                    <h3>Cable Services</h3>
+                    <ul>
+                        <li>Cable Hi-Pot Test</li>
+                        <li>HT Cable Termination</li>
+                        <li>Cable Fault Location</li>
+                        <li>Cable Laying & Routing</li>
+                        <li>Cabling & Glanding</li>
+                        <li>Insulation Testing</li>
+                        <li>Continuity Checks</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Additional Services</h3>
+                    <ul>
+                        <li>HT/LT Motor Testing</li>
+                        <li>Meter Calibration</li>
+                        <li>O&M Services</li>
+                        <li>Overhauling Work</li>
+                        <li>Equipment Erection</li>
+                        <li>T&C Work</li>
+                        <li>Substation Automation</li>
+                        <li>Relay Integration to SAS</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -688,140 +827,6 @@
         </div>
     </section>
 
-
-    <section id="services" class="section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive electrical testing and commissioning solutions</p>
-            </div>
-
-            <div class="services-layout">
-                <div class="service-box">
-                    <div class="service-icon">?</div>
-                    <h3>Power Transformer Testing</h3>
-                    <ul>
-                        <li>Voltage Ratio</li>
-                        <li>Vector Group</li>
-                        <li>Magnetic Balance</li>
-                        <li>Magnetizing Current</li>
-                        <li>Turn Ratio Testing</li>
-                        <li>Winding Resistance</li>
-                        <li>Insulation Resistance</li>
-                        <li>SFRA & Tandelta</li>
-                        <li>Oil Filtration Service</li>
-                        <li>OLTC Commissioning</li>
-                    </ul>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">⚡</div>
-                    <h3>CT/PT & CVT Testing</h3>
-                    <ul>
-                        <li>Insulation Resistance</li>
-                        <li>Winding Resistance</li>
-                        <li>Polarity Testing</li>
-                        <li>Knee Point Testing</li>
-                        <li>Ratio Testing</li>
-                        <li>Tandelta Testing</li>
-                        <li>Burden Testing</li>
-                        <li>Accuracy Verification</li>
-                    </ul>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">??</div>
-                    <h3>Circuit Breaker Testing</h3>
-                    <ul>
-                        <li>Insulation Resistance</li>
-                        <li>Timing Tests (SF6)</li>
-                        <li>CRM & DCRM Testing</li>
-                        <li>Coil Current Testing</li>
-                        <li>Coil IR Testing</li>
-                        <li>Motor Resistance & IR</li>
-                        <li>Local/Remote Operation</li>
-                        <li>Contact Resistance</li>
-                    </ul>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">??</div>
-                    <h3>Panel Testing</h3>
-                    <ul>
-                        <li>HT/LT Panel Testing</li>
-                        <li>VCB Testing</li>
-                        <li>ACB Testing</li>
-                        <li>CT & PT Commissioning</li>
-                        <li>Relay Testing (All types)</li>
-                        <li>Scheme Checking</li>
-                        <li>Feeder Commissioning</li>
-                    </ul>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">??</div>
-                    <h3>Cable Services</h3>
-                    <ul>
-                        <li>Cable Hi-Pot Test</li>
-                        <li>HT Cable Termination</li>
-                        <li>Cable Fault Location</li>
-                        <li>Cable Laying & Routing</li>
-                        <li>Cabling & Glanding</li>
-                        <li>Insulation Testing</li>
-                        <li>Continuity Checks</li>
-                    </ul>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">??</div>
-                    <h3>Additional Services</h3>
-                    <ul>
-                        <li>HT/LT Motor Testing</li>
-                        <li>Meter Calibration</li>
-                        <li>O&M Services</li>
-                        <li>Overhauling Work</li>
-                        <li>Equipment Erection</li>
-                        <li>T&C Work</li>
-                        <li>Substation Automation</li>
-                        <li>Relay Integration to SAS</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="expertise">
-    <h2 class="section-title">Our Expertise</h2>
-    <div class="expertise-grid">
-        
-        <div class="expertise-box">
-            <img src="images/hydro.png" alt="Hydro Power Icon" class="expertise-icon">
-            <h3>Hydro Power</h3>
-            <p>Expertise in hydroelectric power plants & equipment.</p>
-        </div>
-
-        <div class="expertise-box">
-            <img src="images/solar.png" alt="Solar Power Icon" class="expertise-icon">
-            <h3>Solar Power</h3>
-            <p>Comprehensive testing and support for solar installations.</p>
-        </div>
-
-        <div class="expertise-box">
-            <img src="images/thermal.png" alt="Thermal Power Icon" class="expertise-icon">
-            <h3>Thermal Power</h3>
-            <p>Specialized knowledge in thermal power generation systems.</p>
-        </div>
-
-        <div class="expertise-box">
-            <img src="images/wind.png" alt="Wind Power Icon" class="expertise-icon">
-            <h3>Wind Power</h3>
-            <p>Support for wind energy infrastructure and diagnostics.</p>
-        </div>
-
-    </div>
-</section>
- 
-
     <section id="testing" class="section-alt">
         <div class="container">
             <div class="section-header">
@@ -865,23 +870,23 @@
                     <h3>Contact Information</h3>
                     
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">📞</div>
                         <div class="contact-detail-content">
                             <h4>Phone</h4>
-                            <p>+91 99800 22300<br>+91 90191 98006</p>
+                            <p>+91 99800 22300<br>+91 80884 17450</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">✉️</div>
                         <div class="contact-detail-content">
                             <h4>Email</h4>
-                            <p>service@quantaengineeringsolutions.com</p>
+                            <p>quantaengineeringsolutions@gmail.com</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">📍</div>
                         <div class="contact-detail-content">
                             <h4>Address</h4>
                             <p>Unit No.1 H.No. 517<br>
@@ -916,32 +921,4 @@
                             <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
                         </div>
                         
-<div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
-    <button type="submit" class="submit-btn-centered">Send Message</button>
-</div>
-
-<!-- ✅ EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-   (function(){
-      emailjs.init("ipddUcfuhSm67v2JJ");
-   })();
-
-   document.getElementById('contactForm').addEventListener('submit', function(e) {
-       e.preventDefault();
-
-       const formData = {
-           name: document.getElementById('name').value,
-           phone: document.getElementById('phone').value,
-           email: document.getElementById('email').value,
-           service: document.getElementById('service').value
-       };
-
-       emailjs.send('service_q6ga807', 'template_js61yig', formData)
-           .then(() => alert('✅ Message sent successfully!'),
-                 err => alert('❌ Failed to send message.'));
-   });
-</script>
-
-</body>
-</html>
+                        <div class="form-group full-width
