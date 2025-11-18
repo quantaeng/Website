@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quanta Engineering Solutions - Your Reliable Electrical Partner</title>
+    <head>
     <style>
+        /* your existing CSS here */
+
+        /* paste this anywhere inside the <style> tag */
+        #expertise {
+            padding: 80px 2rem;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-top: 40px;
+        }
+
+        .expertise-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .expertise-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .expertise-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<style>
         * {
             margin: 0;
             padding: 0;
