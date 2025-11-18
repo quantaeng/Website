@@ -964,15 +964,19 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
     (function() {
-        emailjs.init("ipddUcfuhSm67v2JJ"); // ← Replace with your EmailJS Public Key
+        emailjs.init("ipddUcfuhSm67v2JJ"); // ← Your EmailJS Public Key
     })();
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        emailjs.sendForm('service_q6ga807', 'template_js61yig', this) // ← Replace IDs
+        // First email - send admin notification
+        emailjs.sendForm('service_q6ga807', 'template_js61yig', this)
             .then(function() {
-                document.getElementById('statusMessage').innerText = "Message sent successfully!";
+                // Auto-reply to sender
+                emailjs.sendForm('service_q6ga807', 'template_pempxbe', this); // ← Replace with your auto-reply template ID
+
+                document.getElementById('statusMessage').innerText = "Message sent successfully! Check your email for confirmation.";
                 document.getElementById('statusMessage').style.color = "green";
                 document.getElementById('contactForm').reset();
             }, function(error) {
