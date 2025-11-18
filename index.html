@@ -614,7 +614,35 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+ /* Updated Send Button */
+.send-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #1a73e8, #0b59d6);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    margin-top: 15px;
+}
+
+/* Hover effect */
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Active state */
+.send-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}   
+	</style>
 </head>
 <body>
     <header class="header">
