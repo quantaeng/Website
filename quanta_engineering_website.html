@@ -298,7 +298,7 @@
         }
 
         .service-box li::before {
-            content: '⚡';
+            content: '?';
             position: absolute;
             left: 0;
             color: var(--light-blue);
@@ -476,22 +476,25 @@
             min-height: 120px;
         }
 
-        .submit-btn {
-            background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
-            color: white;
-            padding: 1.2rem 3rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
+.submit-btn-centered {
+    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: auto;           /* width based on content */
+    display: inline-block; /* allows centering */
+    box-shadow: 0 5px 15px rgba(74,144,226,0.3);
+}
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+.submit-btn-centered:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(74,144,226,0.6);
+}
         }
 
         .footer {
@@ -620,7 +623,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo-section">
-                <div class="logo">QUANTA ENGINEERING</div>
+                <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
                 <div class="tagline">Your Reliable Electrical Partner</div>
             </div>
             <ul class="nav-menu">
@@ -693,7 +696,7 @@
 
             <div class="services-layout">
                 <div class="service-box">
-                    <div class="service-icon">⚡</div>
+                    <div class="service-icon">?</div>
                     <h3>Power Transformer Testing</h3>
                     <ul>
                         <li>Voltage Ratio</li>
@@ -710,7 +713,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">🔌</div>
+                    <div class="service-icon">??</div>
                     <h3>CT/PT & CVT Testing</h3>
                     <ul>
                         <li>Insulation Resistance</li>
@@ -725,7 +728,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon">??</div>
                     <h3>Circuit Breaker Testing</h3>
                     <ul>
                         <li>Insulation Resistance</li>
@@ -740,7 +743,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon">??</div>
                     <h3>Panel Testing</h3>
                     <ul>
                         <li>HT/LT Panel Testing</li>
@@ -754,7 +757,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">🔩</div>
+                    <div class="service-icon">??</div>
                     <h3>Cable Services</h3>
                     <ul>
                         <li>Cable Hi-Pot Test</li>
@@ -768,7 +771,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">⚙️</div>
+                    <div class="service-icon">??</div>
                     <h3>Additional Services</h3>
                     <ul>
                         <li>HT/LT Motor Testing</li>
@@ -794,32 +797,32 @@
 
             <div class="expertise-grid">
                 <div class="expertise-box">
-                    <div class="expertise-icon">🏭</div>
+                    <div class="expertise-icon">??</div>
                     <h3>GIS</h3>
                     <p>Gas Insulated Switchgear</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">🔌</div>
+                    <div class="expertise-icon">??</div>
                     <h3>AIS</h3>
                     <p>Air Insulated Switchgear</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">🔥</div>
+                    <div class="expertise-icon">??</div>
                     <h3>Thermal</h3>
                     <p>Thermal Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">💨</div>
+                    <div class="expertise-icon">??</div>
                     <h3>Wind</h3>
                     <p>Wind Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">💧</div>
+                    <div class="expertise-icon">??</div>
                     <h3>Hydro</h3>
                     <p>Hydro Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">☀️</div>
+                    <div class="expertise-icon">??</div>
                     <h3>Solar</h3>
                     <p>Solar Power Plants</p>
                 </div>
@@ -870,23 +873,23 @@
                     <h3>Contact Information</h3>
                     
                     <div class="contact-detail">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon">??</div>
                         <div class="contact-detail-content">
                             <h4>Phone</h4>
-                            <p>+91 99800 22300<br>+91 80884 17450</p>
+                            <p>+91 99800 22300<br>+91 90191 98006</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon">??</div>
                         <div class="contact-detail-content">
                             <h4>Email</h4>
-                            <p>quantaengineeringsolutions@gmail.com</p>
+                            <p>service@quantaengineeringsolutions.com</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">??</div>
                         <div class="contact-detail-content">
                             <h4>Address</h4>
                             <p>Unit No.1 H.No. 517<br>
@@ -921,4 +924,32 @@
                             <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
                         </div>
                         
-                        <div class="form-group full-width
+<div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
+    <button type="submit" class="submit-btn-centered">Send Message</button>
+</div>
+
+<!-- ✅ EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("ipddUcfuhSm67v2JJ");
+   })();
+
+   document.getElementById('contactForm').addEventListener('submit', function(e) {
+       e.preventDefault();
+
+       const formData = {
+           name: document.getElementById('name').value,
+           phone: document.getElementById('phone').value,
+           email: document.getElementById('email').value,
+           service: document.getElementById('service').value
+       };
+
+       emailjs.send('service_q6ga807', 'template_js61yig', formData)
+           .then(() => alert('✅ Message sent successfully!'),
+                 err => alert('❌ Failed to send message.'));
+   });
+</script>
+
+</body>
+</html>
