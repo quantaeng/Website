@@ -970,18 +970,26 @@
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // First email - send admin notification
-        emailjs.sendForm('service_q6ga807', 'template_js61yig', this)
-            .then(function() {
-                // Auto-reply to sender
-                emailjs.sendForm('service_q6ga807', 'template_pempxbe', this); // ← Replace with your auto-reply template ID
+        const form = this;
 
+        // First email - admin notification
+        emailjs.sendForm('service_q6ga807', 'template_js61yig', form)
+            .then(function() {
+                // Now send auto-reply
+                return emailjs.sendForm('service_q6ga807', 'template_pempxbe', form);
+            })
+            .then(function() {
+                // If auto-reply succeeds
                 document.getElementById('statusMessage').innerText = "Message sent successfully! Check your email for confirmation.";
                 document.getElementById('statusMessage').style.color = "green";
-                document.getElementById('contactForm').reset();
-            }, function(error) {
-                document.getElementById('statusMessage').innerText = "Failed to send message. Please try again.";
+                form.reset();
+            })
+            .catch(function(error) {
+                console.log("Error:", error);
+
+                document.getElementById('statusMessage').innerText = "There was an issue sending your message. Please try again.";
                 document.getElementById('statusMessage').style.color = "red";
             });
     });
 </script>
+
