@@ -46,6 +46,27 @@
             display: flex;
             flex-direction: column;
         }
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px;
+    }
+}
 
         .logo {
             font-size: 1.8rem;
@@ -647,10 +668,14 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo-section">
-                <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
-                <div class="tagline">Your Reliable Electrical Partner</div>
-            </div>
+<div class="logo-section">
+    <img src="images/quanta-logo.png" alt="Quanta Engineering Solutions Logo" class="logo-img">
+    <div class="logo-text">
+        <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
+        <div class="tagline">Your Reliable Electrical Partner</div>
+    </div>
+</div>
+
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -908,6 +933,7 @@
                         <div class="contact-detail-content">
                             <h4>Email</h4>
                             <p>quantaengineeringsolutions@gmail.com</p>
+							<p>service@quantaengineeringsolutions.com</p>
                         </div>
                     </div>
 
