@@ -41,11 +41,6 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-        }
 .logo-section {
     display: flex;
     align-items: center;
@@ -55,6 +50,7 @@
 .logo-img {
     height: 60px;
     width: auto;
+    display: block;
 }
 
 .logo-text {
@@ -669,12 +665,17 @@
     <header class="header">
         <nav class="nav-container">
 <div class="logo-section">
-    <img src="images/quanta-logo.png" alt="Quanta Engineering Solutions Logo" class="logo-img">
+    <img src="./assets/images/quanta-logo.png"
+     alt="Quanta Engineering Solutions Logo"
+     class="logo-img">
+         loading="eager">
     <div class="logo-text">
         <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
         <div class="tagline">Your Reliable Electrical Partner</div>
     </div>
 </div>
+
+
 
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
