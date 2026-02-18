@@ -46,6 +46,27 @@
             display: flex;
             flex-direction: column;
         }
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px;
+    }
+}
 
         .logo {
             font-size: 1.8rem;
@@ -298,7 +319,7 @@
         }
 
         .service-box li::before {
-            content: '?';
+            content: '⚡';
             position: absolute;
             left: 0;
             color: var(--light-blue);
@@ -476,25 +497,22 @@
             min-height: 120px;
         }
 
-.submit-btn-centered {
-    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
-    color: white;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    width: auto;           /* width based on content */
-    display: inline-block; /* allows centering */
-    box-shadow: 0 5px 15px rgba(74,144,226,0.3);
-}
+        .submit-btn {
+            background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
 
-.submit-btn-centered:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(74,144,226,0.6);
-}
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
         }
 
         .footer {
@@ -617,15 +635,47 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+ /* Updated Send Button */
+.send-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #1a73e8, #0b59d6);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    margin-top: 15px;
+}
+
+/* Hover effect */
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Active state */
+.send-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}   
+	</style>
 </head>
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo-section">
-                <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
-                <div class="tagline">Your Reliable Electrical Partner</div>
-            </div>
+<div class="logo-section">
+    <img src="images/quanta-logo.png" alt="Quanta Engineering Solutions Logo" class="logo-img">
+    <div class="logo-text">
+        <div class="logo">QUANTA ENGINEERING SOLUTIONS</div>
+        <div class="tagline">Your Reliable Electrical Partner</div>
+    </div>
+</div>
+
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -696,7 +746,7 @@
 
             <div class="services-layout">
                 <div class="service-box">
-                    <div class="service-icon">?</div>
+                    <div class="service-icon">⚡</div>
                     <h3>Power Transformer Testing</h3>
                     <ul>
                         <li>Voltage Ratio</li>
@@ -713,7 +763,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">??</div>
+                    <div class="service-icon">🔌</div>
                     <h3>CT/PT & CVT Testing</h3>
                     <ul>
                         <li>Insulation Resistance</li>
@@ -728,7 +778,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">??</div>
+                    <div class="service-icon">🔧</div>
                     <h3>Circuit Breaker Testing</h3>
                     <ul>
                         <li>Insulation Resistance</li>
@@ -743,7 +793,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">??</div>
+                    <div class="service-icon">📊</div>
                     <h3>Panel Testing</h3>
                     <ul>
                         <li>HT/LT Panel Testing</li>
@@ -757,7 +807,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">??</div>
+                    <div class="service-icon">🔩</div>
                     <h3>Cable Services</h3>
                     <ul>
                         <li>Cable Hi-Pot Test</li>
@@ -771,7 +821,7 @@
                 </div>
 
                 <div class="service-box">
-                    <div class="service-icon">??</div>
+                    <div class="service-icon">⚙️</div>
                     <h3>Additional Services</h3>
                     <ul>
                         <li>HT/LT Motor Testing</li>
@@ -787,8 +837,7 @@
             </div>
         </div>
     </section>
-
-    <section id="expertise" class="section-dark">
+	    <section id="expertise" class="section-dark">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Expertise</h2>
@@ -797,39 +846,38 @@
 
             <div class="expertise-grid">
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">🏭</div>
                     <h3>GIS</h3>
                     <p>Gas Insulated Switchgear</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">🔌</div>
                     <h3>AIS</h3>
                     <p>Air Insulated Switchgear</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">🔥</div>
                     <h3>Thermal</h3>
                     <p>Thermal Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">💨</div>
                     <h3>Wind</h3>
                     <p>Wind Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">💧</div>
                     <h3>Hydro</h3>
                     <p>Hydro Power Plants</p>
                 </div>
                 <div class="expertise-box">
-                    <div class="expertise-icon">??</div>
+                    <div class="expertise-icon">☀️</div>
                     <h3>Solar</h3>
                     <p>Solar Power Plants</p>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="testing" class="section-alt">
         <div class="container">
             <div class="section-header">
@@ -873,7 +921,7 @@
                     <h3>Contact Information</h3>
                     
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">📞</div>
                         <div class="contact-detail-content">
                             <h4>Phone</h4>
                             <p>+91 99800 22300<br>+91 90191 98006</p>
@@ -881,15 +929,16 @@
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">✉️</div>
                         <div class="contact-detail-content">
                             <h4>Email</h4>
-                            <p>service@quantaengineeringsolutions.com</p>
+                            <p>quantaengineeringsolutions@gmail.com</p>
+							<p>service@quantaengineeringsolutions.com</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <div class="contact-icon">??</div>
+                        <div class="contact-icon">📍</div>
                         <div class="contact-detail-content">
                             <h4>Address</h4>
                             <p>Unit No.1 H.No. 517<br>
@@ -900,56 +949,73 @@
                     </div>
                 </div>
 
-                <div class="contact-form-section">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="service">Service Required</label>
-                            <input type="text" id="service" name="service" placeholder="e.g., Transformer Testing, Panel Testing">
-                        </div>
-                        
-<div class="form-group full-width" style="margin-top: 2rem; text-align: center;">
-    <button type="submit" class="submit-btn-centered">Send Message</button>
-</div>
+<!-- Contact Section -->
+<section id="contact">
+    <div class="contact-form-section">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="user_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="user_phone" required>
+                </div>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="user_email" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="service">Service Required</label>
+                <input type="text" id="service" name="service_required" placeholder="e.g., Transformer Testing, Panel Testing">
+            </div>
 
-<!-- ✅ EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <div class="form-group full-width">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="send-btn">Send Message</button>
+            <p id="statusMessage"></p>
+        </form>
+    </div>
+</section>
+
+<!-- EmailJS JavaScript SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-   (function(){
-      emailjs.init("ipddUcfuhSm67v2JJ");
-   })();
+    (function() {
+        emailjs.init("ipddUcfuhSm67v2JJ"); // ← Your EmailJS Public Key
+    })();
 
-   document.getElementById('contactForm').addEventListener('submit', function(e) {
-       e.preventDefault();
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-       const formData = {
-           name: document.getElementById('name').value,
-           phone: document.getElementById('phone').value,
-           email: document.getElementById('email').value,
-           service: document.getElementById('service').value
-       };
+        const form = this;
 
-       emailjs.send('service_q6ga807', 'template_js61yig', formData)
-           .then(() => alert('✅ Message sent successfully!'),
-                 err => alert('❌ Failed to send message.'));
-   });
+        // First email - admin notification
+        emailjs.sendForm('service_q6ga807', 'template_js61yig', form)
+            .then(function() {
+                // Now send auto-reply
+                return emailjs.sendForm('service_q6ga807', 'template_pempxbe', form);
+            })
+            .then(function() {
+                // If auto-reply succeeds
+                document.getElementById('statusMessage').innerText = "Message sent successfully! Check your email for confirmation.";
+                document.getElementById('statusMessage').style.color = "green";
+                form.reset();
+            })
+            .catch(function(error) {
+                console.log("Error:", error);
+
+                document.getElementById('statusMessage').innerText = "There was an issue sending your message. Please try again.";
+                document.getElementById('statusMessage').style.color = "red";
+            });
+    });
 </script>
 
-</body>
-</html>
