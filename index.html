@@ -115,20 +115,35 @@
             margin-top: 0.2rem;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
+.nav-menu {
+    display: flex;
+    align-items: center;          /* aligns with logo vertically */
+    gap: 2.5rem;
 }
+
 .nav-menu a {
     display: flex;
+    flex-direction: column;       /* icon on top, text below */
     align-items: center;
-    gap: 6px;          /* space between icon and text */
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
 }
 
 .nav-icon {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1;
+}
+
+.nav-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.nav-menu a:hover .nav-icon,
+.nav-menu a:hover .nav-text {
+    color: var(--light-blue);
+}
+
 }
 
         }
