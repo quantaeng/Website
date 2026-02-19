@@ -41,7 +41,7 @@
     align-items: right;
 }
 .nav-menu {
-    margin-left: right;   /* pushes menu fully to the right */
+    margin-left: auto;   /* pushes menu fully to the right */
 }
 
 .logo-section {
@@ -119,13 +119,17 @@
 
 .nav-menu {
     display: flex;
-    align-items: right-side;          /* aligns with logo vertically */
+    align-items: center;
     gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin-left: auto;
 }
+
 .nav-menu a {
     display: flex;
     flex-direction: column;   /* icon on top, text below */
-    align-items: right-side;
+    align-items: centre;
     gap: 4px;
     color: var(--dark-blue);
     text-decoration: none;
