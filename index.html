@@ -191,10 +191,48 @@
             opacity: 0.9;
             animation: fadeIn 1.5s;
         }
-.hero-image {
+.hero-video {
+    position: relative;
     width: 100%;
     height: 80vh;
     overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+    font-size: 1.3rem;
+}
+
 }
 
 .hero-img {
@@ -746,18 +784,18 @@
     </nav>
 </header>
 
-<section id="home" class="hero-image">
-    <img
-        src="assets/images/relay-testing.jpeg"
-        alt="Electrical relay testing and commissioning work"
-        class="hero-img"
-        loading="eager"
-    />
+<section id="home" class="hero-video">
+    <video autoplay muted loop playsinline class="hero-video-bg">
+        <source src="assets/videos/intro-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="hero-overlay">
         <h1>Quanta Engineering Solutions</h1>
         <p>Excellence in Electrical Testing & Commissioning</p>
     </div>
 </section>
+
 <section class="section-light customers-section">
     <div class="container">
         <div class="section-header">
@@ -772,6 +810,7 @@
 			<img src="assets/images/GE.jpeg" alt="GE Logo">
 			<img src="assets/images/KPTCL.jpeg" alt="KPTCL Logo">
 			<img src="assets/images/Toyota.jpeg" alt="Toyota Logo">
+			<img src="assets/images/TATA.jpeg" alt="TATA Logo">
         </div>
     </div>
 </section>
@@ -1013,7 +1052,7 @@
                         <div class="contact-icon">✉️</div>
                         <div class="contact-detail-content">
                             <h4>Email</h4>
-                            <p>quantaengineeringsolutions@gmail.com</p>
+                            <p>projects@quantaengineeringsolutions.com</p>
 							<p>service@quantaengineeringsolutions.com</p>
                         </div>
                     </div>
