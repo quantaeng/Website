@@ -153,6 +153,18 @@
             opacity: 0.9;
             animation: fadeIn 1.5s;
         }
+.hero-image {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
         .section-alt {
             background: var(--pale-blue);
@@ -696,15 +708,18 @@
     </nav>
 </header>
 
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>QUANTA ENGINEERING SOLUTIONS</h1>
-            <p class="subtitle">Excellence in Electrical Testing & Commissioning</p>
-            <p class="unit">A Unit of Minion Enterprises</p>
-        </div>
-    </section>
-
+<section id="home" class="hero-image">
+    <img
+        src="assets/images/relay-testing.jpeg"
+        alt="Electrical relay testing and commissioning work"
+        class="hero-img"
+        loading="eager"
+    />
+    <div class="hero-overlay">
+        <h1>Quanta Engineering Solutions</h1>
+        <p>Excellence in Electrical Testing & Commissioning</p>
+    </div>
+</section>
     <section id="about" class="section-alt">
         <div class="container">
             <div class="section-header">
