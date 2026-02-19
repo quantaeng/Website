@@ -117,13 +117,16 @@
             margin-top: 0.2rem;
         }
 
-.nav-menu {
+.nav-menu a {
     display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
-    padding: 0;
-    margin-left: auto;
+    flex-direction: column;  /* icon on top, text below */
+    align-items: center;     /* FIXED */
+    gap: 4px;
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: none;            /* REMOVE underline */
 }
 
 .nav-menu a {
@@ -155,20 +158,6 @@
     padding: 0;
     margin: 0;
 }
-        }
-
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-menu a:hover {
-            color: var(--sky-blue);
-            border-bottom-color: var(--sky-blue);
         }
 
         .hero {
@@ -788,11 +777,11 @@
 
         <!-- LEFT: LOGO -->
         <div class="logo-section">
-            <img
-                src="assets/images/quanta-logo.PNG"
-                alt="Quanta Engineering Solutions Logo"
-                class="logo-img"
-                loading="eager"
+            <img 
+			     src="assets/images/quanta-logo.PNG"
+                 alt="Quanta Engineering Solutions Logo"
+                 class="logo-img"
+                 loading="eager"
             />
         </div>
 
@@ -804,7 +793,6 @@
             <li><a href="#expertise"><span class="nav-icon">⚙️</span><span class="nav-text">Expertise</span></a></li>
             <li><a href="#contact"><span class="nav-icon">📞</span><span class="nav-text">Contact Us</span></a></li>
         </ul>
-
     </nav>
 </header>
 
