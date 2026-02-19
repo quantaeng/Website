@@ -76,10 +76,17 @@
             margin-top: 0.2rem;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
+ .nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
         }
 
         .nav-menu a {
@@ -674,16 +681,13 @@
             </div>
         </div>
 
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
-			<li><a href="#services">Services</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#testing">Testing</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </ul>
-
+ <ul class="nav-menu">
+    <li><a href="#home"><span class="nav-icon">🏠</span> Home</a></li>
+    <li><a href="#about"><span class="nav-icon">ℹ️</span> About</a></li>
+    <li><a href="#services"><span class="nav-icon">🛠️</span> Services</a></li>
+    <li><a href="#expertise"><span class="nav-icon">⚙️</span> Expertise</a></li>
+    <li><a href="#contact"><span class="nav-icon">📞</span> Contact</a></li>
+</ul>
     </nav>
 </header>
 
