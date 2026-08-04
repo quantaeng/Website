@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Our Services | Quanta Engineering Solutions</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:#f8fbff;
+color:#333;
+}
+
+.hero{
+
+height:420px;
+
+background:
+linear-gradient(rgba(0,51,102,.80),
+rgba(0,51,102,.80)),
+url("assets/images/services-banner.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+color:white;
+
+}
+
+.hero h1{
+
+font-size:52px;
+margin-bottom:10px;
+
+}
+
+.hero p{
+
+font-size:20px;
+max-width:800px;
+
+}
+
+.intro{
+
+max-width:1200px;
+margin:auto;
+padding:80px 30px;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
+}
+
+.intro img{
+
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+}
+
+.intro h2{
+
+color:#003366;
+font-size:38px;
+margin-bottom:20px;
+
+}
+
+.intro p{
+
+line-height:1.8;
+
+}
+
+.services{
+
+padding:80px 40px;
+background:white;
+
+}
+
+.section-title{
+
+text-align:center;
+font-size:42px;
+color:#003366;
+margin-bottom:60px;
+
+}
+
+.service-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:35px;
+
+max-width:1400px;
+margin:auto;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.18);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.card-content{
+
+padding:30px;
+
+}
+
+.card i{
+
+font-size:42px;
+
+color:#0066cc;
+
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+color:#003366;
+
+}
+
+.card p{
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+.learn{
+
+display:inline-block;
+
+padding:12px 28px;
+
+background:#0066cc;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:6px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.learn:hover{
+
+background:#003366;
+
+}
+
+@media(max-width:900px){
+
+.intro{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.section-title{
+
+font-size:34px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- include your existing header here -->
+
+<section class="hero">
+
+<div>
+
+<h1>Electrical Testing & Commissioning Services</h1>
+
+<p>
+
+Comprehensive testing, commissioning and diagnostic
+solutions for electrical systems up to <b>765 kV</b>
+
+</p>
+
+</div>
+
+</section>
+
+<section class="intro">
+
+<div>
+
+<h2>Professional Engineering Services</h2>
+
+<p>
+
+Quanta Engineering Solutions provides comprehensive Electrical Testing &
+Commissioning services for transmission utilities, distribution utilities,
+renewable energy projects and industrial power systems.
+
+</p>
+
+<p>
+
+Our experienced commissioning engineers perform factory acceptance,
+site acceptance, testing, diagnostics, commissioning and maintenance of
+electrical equipment using calibrated international testing equipment while
+following applicable IEC and IEEE standards.
+
+</p>
+
+</div>
+
+<div>
+
+<img src="assets/images/substation.jpg">
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2 class="section-title">
+
+Our Specialist Services
+
+</h2>
+
+<div class="service-grid">
+
+<div class="card">
+
+<img src="assets/images/transformer.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-bolt"></i>
+
+<h3>Power Transformer Testing</h3>
+
+<p>
+
+Routine, commissioning and diagnostic testing of power transformers up to
+765kV.
+
+</p>
+
+<a href="services/transformer-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/ctpt.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-wave-square"></i>
+
+<h3>CT / PT / CVT Testing</h3>
+
+<p>
+
+Complete testing and commissioning of Instrument Transformers.
+
+</p>
+
+<a href="services/ct-pt-cvt-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/circuit-breaker.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-plug-circle-bolt"></i>
+
+<h3>Circuit Breaker Testing</h3>
+
+<p>
+
+Testing and commissioning of SF6, Vacuum and Air Circuit Breakers.
+
+</p>
+
+<a href="services/circuit-breaker-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/relay.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-microchip"></i>
+
+<h3>Protection Relay Testing</h3>
+
+<p>
+
+Numerical relay testing, secondary injection,
+scheme checking and commissioning.
+
+</p>
+
+<a href="services/relay-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/panel.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-server"></i>
+
+<h3>Panel Testing</h3>
+
+<p>
+
+Testing and commissioning of HT, LT,
+Relay and Control Panels.
+
+</p>
+
+<a href="services/panel-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/cable.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-network-wired"></i>
+
+<h3>Cable Testing</h3>
+
+<p>
+
+HT Cable Testing,
+VLF,
+Hi-Pot,
+Fault Location and Commissioning.
+
+</p>
+
+<a href="services/cable-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/substation2.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-industry"></i>
+
+<h3>Substation Testing & Commissioning</h3>
+
+<p>
+
+Complete testing and commissioning services
+for GIS & AIS Substations.
+
+</p>
+
+<a href="services/substation-testing.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="assets/images/maintenance.jpg">
+
+<div class="card-content">
+
+<i class="fas fa-screwdriver-wrench"></i>
+
+<h3>Operation & Maintenance</h3>
+
+<p>
+
+Preventive,
+Breakdown,
+Shutdown Maintenance and Annual Maintenance Contracts.
+
+</p>
+
+<a href="services/operation-maintenance.html" class="learn">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
