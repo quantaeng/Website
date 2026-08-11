@@ -1,12 +1,99 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CT/PT & CVT Testing - Quanta Engineering Solutions</title><link rel="stylesheet" href="../assets/css/original-style.css"></head><body><header class="header"><nav class="nav-container"><div class="logo-section"><img src="../assets/images/quanta-logo.jpeg" alt="Quanta Engineering Solutions Logo" class="logo-img"></div><ul class="nav-menu">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CT/PT & CVT Testing - Quanta Engineering Solutions</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark-blue:#003366;--light-blue:#4A90E2;--sky-blue:#87CEEB;--pale-blue:#E6F3FF;--white:#FFFFFF}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:#fff}
+a{color:inherit}
+.header{background:white;color:var(--dark-blue);padding:1.5rem 0;box-shadow:0 4px 6px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000}
+.nav-container{max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap}
+.logo-section{display:flex;align-items:center;gap:15px}
+.logo-img{height:80px;width:auto;display:block}
+.nav-menu{display:flex;flex-direction:row;align-items:center;gap:2.5rem;list-style:none;margin:0 0 0 auto;padding:0}
+.nav-menu a{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--dark-blue);font-weight:600;font-size:.8rem}
+.nav-icon{font-size:1.4rem;line-height:1}
+.nav-menu a:hover{color:var(--light-blue)}
+.hero-video{height:52vh;min-height:390px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-video-bg{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+.hero-overlay{position:relative;z-index:1;background:rgba(0,51,102,.72);color:white;text-align:center;padding:3rem 2rem;width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-overlay h1{font-size:3.2rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+.hero-overlay p{font-size:1.35rem}
+.section-light{background:white}
+.container{max-width:1400px;margin:0 auto;padding:5rem 2rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-title{font-size:2.8rem;margin-bottom:1rem;color:var(--dark-blue);position:relative;display:inline-block}
+.section-title:after{content:'';position:absolute;bottom:-10px;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--light-blue),var(--sky-blue))}
+.section-subtitle{font-size:1.2rem;color:#666;margin-top:1.5rem}
+.services-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.service-box{background:white;padding:2.5rem;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .3s;border-top:4px solid var(--light-blue)}
+.service-box:hover{transform:translateY(-15px);box-shadow:0 15px 35px rgba(74,144,226,.3);border-top-color:var(--dark-blue)}
+.service-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--light-blue),var(--sky-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:2rem;color:white}
+.service-box h3{color:var(--dark-blue);font-size:1.5rem;margin-bottom:1.5rem}
+.service-box ul{list-style:none;padding:0}
+.service-box li{padding:.6rem 0;padding-left:1.8rem;position:relative;color:#555;font-size:1rem}
+.service-box li:before{content:'⚡';position:absolute;left:0;color:var(--light-blue);font-size:1.2rem}
+.service-link{display:inline-block;margin-top:1rem;color:var(--dark-blue);font-weight:700;text-decoration:none}
+.service-link:hover{color:var(--light-blue)}
+.cta{margin-top:3rem;background:linear-gradient(135deg,var(--dark-blue),var(--light-blue));color:white;border-radius:15px;padding:2.5rem;text-align:center}
+.cta h2{font-size:2rem;margin-bottom:.7rem}
+.cta p{margin-bottom:1rem}
+.cta a{display:inline-block;background:white;color:var(--dark-blue);padding:.8rem 1.8rem;border-radius:6px;text-decoration:none;font-weight:700}
+.back-link{display:inline-block;margin-bottom:2rem;color:var(--dark-blue);font-weight:600;text-decoration:none}
+.back-link:hover{color:var(--light-blue)}
+.detail-layout{display:grid;grid-template-columns:2fr 1fr;gap:2.5rem}
+.detail-card{background:white;padding:2.5rem;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,.08);border-top:4px solid var(--light-blue)}
+.detail-card h2,.detail-card h3{color:var(--dark-blue);margin-bottom:1rem}
+.detail-card h3{margin-top:2rem}
+.detail-card p{color:#555;margin-bottom:1rem}
+.detail-card ul{list-style:none;padding:0}
+.detail-card li{padding:.6rem 0;padding-left:1.8rem;position:relative;color:#555}
+.detail-card li:before{content:'⚡';position:absolute;left:0;color:var(--light-blue)}
+.footer{background:var(--dark-blue);color:white;padding:3rem 2rem}
+.footer-content{max-width:1400px;margin:auto}
+.footer-top{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+.footer-section h4{color:var(--sky-blue);margin-bottom:1rem;font-size:1.2rem}
+.footer-section p{margin:.35rem 0;opacity:.9}
+.footer-section a{text-decoration:none}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:2rem;padding-top:2rem;text-align:center;opacity:.9}
+@media(max-width:1000px){.services-layout{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+ .logo-img{height:45px}
+ .nav-container{padding:0 1rem}
+ .nav-menu{gap:1rem}
+ .nav-menu a{font-size:.65rem}
+ .nav-icon{font-size:1.15rem}
+ .hero-video{min-height:330px;height:42vh}
+ .hero-overlay h1{font-size:2.2rem}
+ .hero-overlay p{font-size:1.05rem}
+ .container{padding:3.5rem 1.25rem}
+ .section-title{font-size:2.2rem}
+ .services-layout,.detail-layout,.footer-top{grid-template-columns:1fr}
+ .service-box,.detail-card{padding:2rem}
+}
+</style></head><body><header class="header"><nav class="nav-container">
+<div class="logo-section"><a href="../index.html"><img src="../assets/images/quanta-logo.jpeg" alt="Quanta Engineering Solutions Logo" class="logo-img"></a></div>
+<ul class="nav-menu">
 <li><a href="../index.html"><span class="nav-icon">🏠</span><span class="nav-text">Home</span></a></li>
 <li><a href="../about.html"><span class="nav-icon">ℹ️</span><span class="nav-text">About Us</span></a></li>
 <li><a href="../services.html"><span class="nav-icon">🛠️</span><span class="nav-text">Services</span></a></li>
 <li><a href="../index.html#expertise"><span class="nav-icon">⚙️</span><span class="nav-text">Expertise</span></a></li>
 <li><a href="../contact.html"><span class="nav-icon">📞</span><span class="nav-text">Contact Us</span></a></li>
-</ul></nav></header><section class="hero"><div class="hero-content"><h1>CT/PT & CVT Testing</h1><p class="subtitle">Electrical Testing & Commissioning</p><p class="unit">Quanta Engineering Solutions — Your Reliable Electrical Partner</p></div></section>
-<section class="section-light"><div class="container"><a class="back-link" href="../services.html">← Back to Our Services</a><div class="section-header"><h2 class="section-title">CT/PT & CVT Testing</h2><p class="section-subtitle">Detailed testing, verification and commissioning activities</p></div><div class="detail-grid"><div class="detail-card"><h2>Scope of Service</h2><p>Quanta Engineering Solutions provides structured field testing and commissioning support for this service, with emphasis on accurate measurements, functional verification, safety and complete documentation.</p><h3>Testing & Commissioning Activities</h3><ul><li>Insulation Resistance</li><li>Winding Resistance</li><li>Polarity Testing</li><li>Knee Point Testing</li><li>Ratio Testing</li><li>Tan Delta Testing</li><li>Burden Testing</li><li>Accuracy Verification</li></ul></div><div class="detail-card"><h2>Typical Deliverables</h2><ul><li>Equipment-wise test reports</li><li>Recorded test values and observations</li><li>Commissioning check sheets</li><li>Functional verification records</li><li>Punch-point observations</li><li>Final documentation for handover</li></ul><h3>Request a Quote</h3><p>Share the equipment type, voltage level, location and scope of work with our team.</p></div></div><div class="cta"><h2>Discuss Your Requirement</h2><p>Our team can help define the testing and commissioning scope for your project.</p><a href="../contact.html">Contact Us</a></div></div></section><footer class="footer"><div class="footer-content"><div class="footer-top">
+</ul></nav></header>
+<section class="hero-video">
+<video autoplay muted loop playsinline class="hero-video-bg"><source src="../assets/videos/intro-video.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<div class="hero-overlay"><h1>CT/PT & CVT Testing</h1><p>Electrical Testing &amp; Commissioning</p></div>
+</section>
+<section class="section-light"><div class="container">
+<a class="back-link" href="../services.html">← Back to Our Services</a>
+<div class="section-header"><h2 class="section-title">CT/PT & CVT Testing</h2><p class="section-subtitle">Electrical testing, verification and commissioning activities</p></div>
+<div class="detail-layout">
+<div class="detail-card"><h2>Scope of Service</h2><p>Quanta Engineering Solutions provides structured field testing and commissioning support for ct/pt & cvt testing, with emphasis on accurate measurements, functional verification, safety and complete documentation.</p><h3>Testing &amp; Commissioning Activities</h3><ul><li>Insulation Resistance</li><li>Winding Resistance</li><li>Polarity Testing</li><li>Knee Point Testing</li><li>Ratio Testing</li><li>Tandelta Testing</li><li>Burden Testing</li><li>Accuracy Verification</li></ul></div>
+<div class="detail-card"><h2>Typical Deliverables</h2><ul>
+<li>Equipment-wise test reports</li><li>Recorded test values and observations</li><li>Commissioning check sheets</li><li>Functional verification records</li><li>Punch-point observations</li><li>Final documentation for handover</li>
+</ul><h3>Request a Quote</h3><p>Share the equipment type, voltage level, location and required testing scope with our team.</p></div>
+</div>
+<div class="cta"><h2>Discuss Your Requirement</h2><p>Our team can help define the testing and commissioning scope for your project.</p><a href="../contact.html">Contact Us</a></div>
+</div></section><footer class="footer"><div class="footer-content"><div class="footer-top">
 <div class="footer-section"><h4>Quanta Engineering Solutions</h4><p>Your Reliable Electrical Partner</p><p>Electrical Testing & Commissioning Services</p></div>
 <div class="footer-section"><h4>Our Services</h4><p><a href="../services.html">All Services</a></p><p><a href="../services/power-transformer-testing.html">Power Transformer Testing</a></p><p><a href="../services/protection-relay-testing.html">Protection Relay Testing</a></p></div>
 <div class="footer-section"><h4>Quick Links</h4><p><a href="../about.html">About Us</a></p><p><a href="../contact.html">Contact Us</a></p></div>
-</div><div class="footer-bottom"><p>© 2026 Quanta Engineering Solutions. All rights reserved.</p></div></div></footer><script src="../assets/js/script.js"></script></body></html>
+</div><div class="footer-bottom"><p>© 2026 Quanta Engineering Solutions. All rights reserved.</p></div></div></footer></body></html>
