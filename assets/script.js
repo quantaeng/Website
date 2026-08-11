@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.service-box').forEach((card,i)=>{card.style.animationDelay=(i*.08)+'s'});});
